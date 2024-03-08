@@ -25,7 +25,7 @@
         moreData = false;
 
         if (reqID == null) {
-            req = api.retrieve("DataExtension", cols, filter);
+            req = api.retrieve("DataExtension", cols, filter, opts);
         } else {
             req = api.getNextBatch("DataExtension", reqID);
         }
