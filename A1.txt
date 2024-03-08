@@ -6,7 +6,7 @@ var cols = ["CustomerKey", "Name", "IsSendable"];
 var filter = {
   Property: "CustomerKey",        
   SimpleOperator: "equals",        
-  Value: "Perez_Automation Activity"
+  Value: " "
 };
 var result = [],        
     moreData = true,        
@@ -16,11 +16,11 @@ while (moreData) {
   moreData = false;
 
   if (reqID == null) {
-    req = api.retrieve("Perez_Automation Activity", cols, filter);
+    req = api.retrieve("DataExtension", cols, filter);
   }
 
   else {
-    req = api.getNextBatch("Perez_Automation Activity", reqID);
+    req = api.getNextBatch("DataExtension", reqID);
   }
 
   if (req) {
@@ -34,8 +34,7 @@ while (moreData) {
   }
 }
 
-Write(Stringify(result.length));
-Write("v3");
+Write("varsion 4"(Stringify(result.length)));
 
 
 </script>
