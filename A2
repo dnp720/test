@@ -1,0 +1,54 @@
+<script runat="server">
+ 
+    Platform.Load("core", "1.1.1");
+ 
+    var api = new Script.Util.WSProxy();
+ 
+    Variable.SetValue("ContentJson", "False");
+ 
+    var post = {
+  reqID: "S0ME-REQUEST-ID"
+}
+ 
+    try {
+ 
+        var result = [];
+ 
+        var filter = {
+            Property: "CustomerKey",
+            SimpleOperator: "isNotNull",
+            Value: " "
+        };
+ 
+        var opts = {
+            BatchSize: 300
+        };
+ 
+        var props = {
+            QueryAllAccounts: false
+        };
+ 
+        if(post.reqID) props.ContinueRequest = post.reqID;
+ 
+        var req = api.retrieve("DataExtension", ["Name"], filter, opts, props);
+ 
+        if(req) {
+ 
+            var results = req.Results;
+ 
+            for (var k in results) {
+                result.push(results[k].Name);
+            }
+ 
+            Write(Stringify(result));
+ 
+        } else {
+            throw req;
+        }
+    } catch(error) {
+ 
+        Write(Stringify(error));
+ 
+    }
+ 
+</script>
