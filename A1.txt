@@ -11,7 +11,10 @@
         Property: "CustomerKey",
         SimpleOperator: "isNotNull",
         Value: " "
-    };
+    }
+	var opts = {
+	BatchSize = 100
+	};
 
     var result = [],
         moreData = true,
