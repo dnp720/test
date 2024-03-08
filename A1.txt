@@ -16,11 +16,11 @@ while (moreData) {
   moreData = false;
 
   if (reqID == null) {
-    req = api.retrieve("DataExtension", cols, filter);
+    req = api.retrieve("Perez_Automation Activity", cols, filter);
   }
 
   else {
-    req = api.getNextBatch("DataExtension", reqID);
+    req = api.getNextBatch("Perez_Automation Activity", reqID);
   }
 
   if (req) {
