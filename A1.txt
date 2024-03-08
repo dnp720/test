@@ -34,7 +34,7 @@ while (moreData) {
   }
 }
 
-Write("varsion 1000"(Stringify(result.length)));
+Write(Stringify(result.length));
 
 
 </script>
