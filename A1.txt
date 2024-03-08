@@ -1,0 +1,24 @@
+<script runat="Server" language="Javascript">
+Platform.Load("core","1.1.1");
+
+var api = new Script.Util.WSProxy(),
+    columns = ["Name", "CustomerKey"," "isSendable"],
+    filter = {
+        Property: "Name",
+        SimlpeOperator: "equals",
+        Value: "Perez_Automation Activity"
+    };
+opts = {
+    BatchSize = 300
+};
+var result = [],
+    moreData = true,
+    reqID = req = null;
+
+var req = api.retrive("DataExtension, columns, filter");
+
+
+Write(Stringify(req.Results));
+Write("v1");
+
+</script>
