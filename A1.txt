@@ -6,7 +6,7 @@ var cols = ["CustomerKey", "Name", "IsSendable"];
 var filter = {
   Property: "CustomerKey",        
   SimpleOperator: "equals",        
-  Value: "Perez_Automation Activity"
+  Value: ""
 };
 var result = [],        
     moreData = true,        
@@ -34,7 +34,7 @@ while (moreData) {
   }
 }
 
-Write("varsion 5"(Stringify(result.length)));
+Write("varsion 1000"(Stringify(result.length)));
 
 
 </script>
